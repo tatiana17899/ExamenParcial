@@ -6976,11 +6976,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\CARPETA TATIANA\\CURSOS UNIVERSIDAD\\6TO CICLO\\PROGRAMACIÓN 1\\ExamenParcial\\ExamenParcial.csproj",
+      "projectUniqueName": "D:\\CARPETA TATIANA\\CURSOS UNIVERSIDAD\\6TO CICLO\\PROGRAMACIÓN 1\\EXAMEN PARCIAL\\ExamenParcial\\ExamenParcial.csproj",
       "projectName": "ExamenParcial",
-      "projectPath": "D:\\CARPETA TATIANA\\CURSOS UNIVERSIDAD\\6TO CICLO\\PROGRAMACIÓN 1\\ExamenParcial\\ExamenParcial.csproj",
+      "projectPath": "D:\\CARPETA TATIANA\\CURSOS UNIVERSIDAD\\6TO CICLO\\PROGRAMACIÓN 1\\EXAMEN PARCIAL\\ExamenParcial\\ExamenParcial.csproj",
       "packagesPath": "C:\\Users\\tatia\\.nuget\\packages\\",
-      "outputPath": "D:\\CARPETA TATIANA\\CURSOS UNIVERSIDAD\\6TO CICLO\\PROGRAMACIÓN 1\\ExamenParcial\\obj\\",
+      "outputPath": "D:\\CARPETA TATIANA\\CURSOS UNIVERSIDAD\\6TO CICLO\\PROGRAMACIÓN 1\\EXAMEN PARCIAL\\ExamenParcial\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\tatia\\AppData\\Roaming\\NuGet\\NuGet.Config"

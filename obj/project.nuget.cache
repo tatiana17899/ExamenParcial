@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zBHGSwJX9Fs=",
+  "dgSpecHash": "xurdx84pRKk=",
   "success": true,
-  "projectFilePath": "D:\\CARPETA TATIANA\\CURSOS UNIVERSIDAD\\6TO CICLO\\PROGRAMACIÓN 1\\ExamenParcial\\ExamenParcial.csproj",
+  "projectFilePath": "D:\\CARPETA TATIANA\\CURSOS UNIVERSIDAD\\6TO CICLO\\PROGRAMACIÓN 1\\EXAMEN PARCIAL\\ExamenParcial\\ExamenParcial.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tatia\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\tatia\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
