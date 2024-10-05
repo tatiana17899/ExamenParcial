@@ -1,0 +1,34 @@
+@model ExamenParcial.ViewModel.ConversionesViewModel
+
+<h1>Lista de Conversiones</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Moneda Origen</th>
+            <th>Moneda Destino</th>
+            <th>Tasa de Cambio</th>
+            <th>Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.ListarRemesas != null && Model.ListarRemesas.Any())
+        {
+            @foreach (var conversion in Model.ListarRemesas)
+            {
+                <tr>
+                    <td>@conversion.MonedaOrigen</td>
+                    <td>@conversion.MonedaDestino</td>
+                    <td>@conversion.TasaCambio</td>
+                    <td>@conversion.Fecha.ToShortDateString()</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4">No hay conversiones disponibles.</td>
+            </tr>
+        }
+    </tbody>
+</table>
