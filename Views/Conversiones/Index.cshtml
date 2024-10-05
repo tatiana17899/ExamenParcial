@@ -1,3 +1,4 @@
+@model ExamenParcial.ViewModel.ConversionesViewModel
 @{
     ViewData["Title"] = "Conversión de Moneda";
     var result = ViewBag.Result; 
@@ -17,6 +18,7 @@
     
     <button type="submit">Convertir</button>
 </form>
+<a asp-action="ListConversions" >Ver lista de conversiones</a>
 
 @if (result != null)
 {

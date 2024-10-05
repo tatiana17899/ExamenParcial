@@ -35,5 +35,6 @@ namespace ExamenParcial.Services
             decimal btcPrice = json["data"]["BTC"]["quote"]["USD"]["price"].Value<decimal>();
             return amountInBtc * btcPrice;
         }
+        
     }
 }
