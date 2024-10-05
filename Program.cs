@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ExamenParcial.Data;
+using ExamenParcial.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,8 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddTransient<CoinMarketCapService>();
 
 var app = builder.Build();
 
@@ -35,6 +38,12 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "conversion",
+    pattern: "conversion/{action=Index}/{id?}",
+    defaults: new { controller = "Conversion" }
+);
 
 app.MapControllerRoute(
     name: "default",
