@@ -1,8 +1,11 @@
 @model ExamenParcial.ViewModel.ConversionesViewModel
+<link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/2.1.6/css/dataTables.dataTables.min.css"
+    />
 
 <h1>Lista de Conversiones</h1>
-
-<table>
+<table class="table table-striped" id="convertTable">
     <thead>
         <tr>
             <th>Moneda Origen</th>
@@ -32,3 +35,18 @@
         }
     </tbody>
 </table>
+@section scripts{
+<!-- DataTables -->
+<script src="https://cdn.datatables.net/2.1.5/js/dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#convertTable').DataTable({
+            responsive: true,
+            autoWidth: false,
+            argumentsdom: 'Bfrtip', 
+            buttons: []
+        });
+    });
+</script>
+
+}
