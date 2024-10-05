@@ -1,0 +1,108 @@
+@model ExamenParcial.ViewModel.RemesasViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<body style="background-color: #f8f9fa">
+<div class="container mt-4"> 
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            @TempData["Message"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
+    <h1 class="text-center mb-4" style="
+        font-family: 'Roboto Condensed', sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400; 
+        font-style: normal;
+    ">
+    @ViewData["Title"]
+    </h1>
+
+    <div class="row justify-content-center"> 
+        <div class="col-lg-6">
+            <div class="card shadow"> 
+                <div class="card-header">
+                    <h5 class="card-title">
+                        <span class="material-symbols-outlined">
+                        credit_card
+                        </span>
+                        Registro de Remesa</h5>
+                </div>
+                <div class="card-body">
+                    <form asp-controller="Remesa" asp-action="Registrar" method="post">
+                        <input type="hidden" asp-for="FormRemesa.Id" />
+                        
+                        <div class="mb-3">
+                            <label asp-for="FormRemesa.Remitente" class="form-label">>Nombre del Remitente:</label>
+                            <input asp-for="FormRemesa.Remitente" class="form-control" required/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="FormRemesa.Destinatario" class="form-label">Nombre del Destinatario:</label>
+                            <input asp-for="FormRemesa.Destinatario" class="form-control" required/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="FormRemesa.PaisOrigen " class="form-label">País de Origen:</label>
+                            <input asp-for="FormRemesa.PaisOrigen " class="form-control" required/>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="FormRemesa.PaisDestino" class="form-label">País de Destino:</label>
+                            <input asp-for="FormRemesa.PaisDestino" class="form-control" required/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="FormRemesa.MontoEnviado" class="form-label">Monto a Enviar:</label>
+                            <input asp-for="FormRemesa.MontoEnviado" class="form-control" type="number" step="0.01" required/>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="FormRemesa.Moneda" class="form-label">Moneda a Enviar:</label>
+                            <select asp-for="FormRemesa.Moneda" class="form-select" required />
+                                <option value="USD">USD - Dólares</option>
+                                <option value="BTC">BTC - Bitcoin</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="FormRemesa.TasaCambio" class="form-label">Tasa de cambio:</label>
+                            <input asp-for="FormRemesa.TasaCambio" class="form-control" type="number" step="0.01" required/>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="FormRemesa.MontoRecibido" class="form-label">Monto a Recibir:</label>
+                            <input asp-for="FormRemesa.MontoRecibido" class="form-control" type="number" step="0.01" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="FormRemesa.EstadoTransaccion" class="form-label">Estado de la Transacción:</label>
+                            <select asp-for="FormRemesa.EstadoTransaccion" class="form-select" required>
+                                <option value="">Seleccione el estado</option>
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="Completa">Completa</option>
+                                <option value="Fallida">Fallida</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="FormRemesa.FechaTransaccion" class="form-label">Fecha de la Transacción:</label>
+                            <input asp-for="FormRemesa.FechaTransaccion" class="form-control" type="date" required />
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-dark w-100">Registrar Remesa</button> 
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>

@@ -1,0 +1,87 @@
+@model ExamenParcial.ViewModel.RemesasViewModel
+@{
+    ViewData["Title"] = "";
+}
+<link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/2.1.6/css/dataTables.dataTables.min.css"
+    />
+<link rel="stylesheet" href="~/css/listarcuentas.css" />
+<body style="background-color: #f8f9fa">
+<div class="container mt-4">
+    <h1 class="text-center mb-4">@ViewData["Title"]</h1>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow">
+                <div class="card-header">
+                    <h5 class="card-title"><span class="material-symbols-outlined">
+                    payments
+                    </span> Lista de Remesas</h5>
+                </div>
+                <div class="card-body table-responsive">
+                    <table class="table table-striped" id="remesaTable">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Remitente</th>
+                                <th scope="col">Destinatario</th>
+                                <th scope="col">País Origen</th>
+                                <th scope="col">País Destino</th>
+                                <th scope="col">Monto Enviado</th>
+                                <th scope="col">Moneda</th>
+                                <th scope="col">Tasa de Cambio</th>
+                                <th scope="col">Monto Recibido</th>
+                                <th scope="col">Estado</th>
+                                <th scope="col">Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @if (Model.ListarRemesas != null && Model.ListarRemesas.Any())
+                            {
+                                @foreach (var remesa in Model.ListarRemesas)
+                                {
+                                    <tr>
+                                    <th scope="row">@remesa.Id</th>
+                                    <td>@remesa.Remitente</td>
+                                    <td>@remesa.Destinatario</td>
+                                    <td>@remesa.PaisOrigen</td>
+                                    <td>@remesa.PaisDestino</td>
+                                    <td>@remesa.MontoEnviado</td>
+                                    <td>@remesa.Moneda</td>
+                                    <td>@remesa.TasaCambio</td>
+                                    <td>@remesa.MontoRecibido</td>
+                                    <td>@remesa.EstadoTransaccion</td>
+                                    <td>@remesa.FechaTransaccion.ToString("dd/MM/yyyy")</td>
+                                </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+                                    <td colspan="4" class="text-center">No hay remesas bancarias registradas.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+<!-- DataTables -->
+<script src="https://cdn.datatables.net/2.1.5/js/dataTables.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#remesaTable').DataTable({
+            responsive: true,
+            autoWidth: false,
+            argumentsdom: 'Bfrtip', 
+            buttons: []
+        });
+    });
+</script>
+
+}
+</body>
