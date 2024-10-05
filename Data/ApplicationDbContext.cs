@@ -9,4 +9,6 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
+    public DbSet<ExamenParcial.Models.Remesa> DataRemesa {get; set; }
+    public DbSet<ExamenParcial.Models.Conversiones> DataConversion {get; set; }
 }
